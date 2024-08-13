@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Оформление заказа</title>
+</head>
+<body>
+    <h2>Оформление заказа</h2>
+    <form method="post">
+        {% csrf_token %}
+        <p>Адрес доставки: <input type="text" name="delivery_address" required></p>
+        <p>Дата и время доставки: <input type="datetime-local" name="delivery_date" required></p>
+        <p>Комментарий: <textarea name="comment"></textarea></p>
+        <button type="submit">Заказать</button>
+    </form>
+</body>
+</html>

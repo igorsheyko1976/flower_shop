@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Каталог букетов</title>
+</head>
+<body>
+    <h2>Каталог букетов</h2>
+    <ul>
+        {% for bouquet in bouquets %}
+            <li>
+                <img src="{{ bouquet.image.url }}" alt="{{ bouquet.name }}" style="width: 150px;">
+                <p>{{ bouquet.name }}</p>
+                <p>{{ bouquet.description }}</p>
+                <p>{{ bouquet.price }} руб.</p>
+                <a href="{% url 'order_bouquet' bouquet.id %}">Заказать</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
